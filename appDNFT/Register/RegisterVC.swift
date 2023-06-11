@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterVC: UIViewController {
     
     var registerScreen: RegisterScreen?
+    var auth: Auth?
 
     override func loadView() {
         registerScreen = RegisterScreen()
@@ -21,15 +23,44 @@ class RegisterVC: UIViewController {
         dismissKeyboard()
         registerScreen?.delegate(delegate: self)
         registerScreen?.configTextFieldDelegate(delegate: self)
+        isEnableLoginButton(false)
 
+    }
+    
+    func validateTextFields() {
+        if (registerScreen?.emailTextField.text ?? "").isValid(validType: .email) &&
+            (registerScreen?.passwordTextField.text ?? "").isValid(validType: .password) && (registerScreen?.nameTextField.text ?? "").isValid(validType: .name) {
+            isEnableLoginButton(true)
+        } else {
+            isEnableLoginButton(false)
+        }
+    }
+    
+    func isEnableLoginButton(_ isEnable: Bool) {
+        if isEnable {
+            registerScreen?.loginButton.setTitleColor(.white, for: .normal)
+            registerScreen?.loginButton.isEnabled = true
+            registerScreen?.bgButton.alpha = 1
+        } else {
+            registerScreen?.loginButton.setTitleColor(.lightGray, for: .normal)
+            registerScreen?.loginButton.isEnabled = false
+            registerScreen?.bgButton.alpha = 0.4
+        }
     }
 
 }
 
 extension RegisterVC: RegisterScreenProtocol {
     func pressRegisterButton() {
-        print(#function)
-    }
+            auth?.signIn(withEmail: registerScreen?.emailTextField.text ?? "", password: registerScreen?.passwordTextField.text ?? "", completion: { user, error in if error != nil {
+                // error
+            } else {
+                // sucess
+            }
+                
+            })
+}
+
     
     func pressLoginButton() {
         let vc: LoginVC = LoginVC()

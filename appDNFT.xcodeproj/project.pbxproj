@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5349283B2A362D9C009656BD /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349283A2A362D9C009656BD /* AlertController.swift */; };
+		5349283D2A363B2F009656BD /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349283C2A363B2F009656BD /* RegisterVM.swift */; };
 		53A30BBD2A354F0C007ED0FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A30BBC2A354F0B007ED0FF /* GoogleService-Info.plist */; };
 		53A30BC02A354F92007ED0FF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 53A30BBF2A354F92007ED0FF /* FirebaseAuth */; };
 		53A30BC22A354F92007ED0FF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 53A30BC12A354F92007ED0FF /* FirebaseCrashlytics */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		5349283A2A362D9C009656BD /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		5349283C2A363B2F009656BD /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
 		53A30BBC2A354F0B007ED0FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53A30BC42A3550EC007ED0FF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		53A30BC62A35545E007ED0FF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				53BE4B582A3292F00054BF10 /* RegisterVC.swift */,
 				53BE4B5A2A3293050054BF10 /* RegisterScreen.swift */,
+				5349283C2A363B2F009656BD /* RegisterVM.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				5349283B2A362D9C009656BD /* AlertController.swift in Sources */,
 				53A30BC72A35545E007ED0FF /* String+Extension.swift in Sources */,
 				53BE4B532A3281DD0054BF10 /* LoginScreen.swift in Sources */,
+				5349283D2A363B2F009656BD /* RegisterVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -54,7 +54,7 @@ class LoginVC: UIViewController {
 
 extension LoginVC: LoginScreenProtocol {
     func pressLoginButton() {
-        auth?.signIn(withEmail: loginScreen?.emailTextField.text ?? "", password: loginScreen?.emailTextField.text ?? "", completion: { user, error in if error != nil {
+        auth?.signIn(withEmail: loginScreen?.emailTextField.text ?? "", password: loginScreen?.passwordTextField.text ?? "", completion: { user, error in if error != nil {
             
             // error / completion nao e obrigatorio usar, deixamos ele de modo opcional no alert.
             self.alert?.getAlert(title: "Falha no Login", message: error?.localizedDescription ?? "")
