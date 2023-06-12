@@ -11,7 +11,9 @@ import FirebaseAuth
 class LoginVC: UIViewController {
     
     var loginScreen: LoginScreen?
-    var auth: Auth?
+    
+    private var viewModel: LoginVM = LoginVM()
+    
     var alert: AlertController?
     
     override func loadView() {
@@ -25,6 +27,7 @@ class LoginVC: UIViewController {
         dismissKeyboard()
         loginScreen?.delegate(delegate: self)
         loginScreen?.configTextFieldDelegate(delegate: self)
+        viewModel.delegate(delegate: self)
         isEnableLoginButton(false)
     }
     
@@ -54,15 +57,7 @@ class LoginVC: UIViewController {
 
 extension LoginVC: LoginScreenProtocol {
     func pressLoginButton() {
-        auth?.signIn(withEmail: loginScreen?.emailTextField.text ?? "", password: loginScreen?.passwordTextField.text ?? "", completion: { user, error in if error != nil {
-            
-            // error / completion nao e obrigatorio usar, deixamos ele de modo opcional no alert.
-            self.alert?.getAlert(title: "Falha no Login", message: error?.localizedDescription ?? "")
-        } else {
-            // sucess
-        }
-            
-        })
+        viewModel.loginUser(email: loginScreen?.emailTextField.text ?? "", password: loginScreen?.passwordTextField.text ?? "")
     }
     
     func pressRegisterButton() {
@@ -71,6 +66,18 @@ extension LoginVC: LoginScreenProtocol {
         present(vc, animated: true)
         
     }
+    
+}
+
+extension LoginVC: LoginVMProtocol {
+    func sucessLogin() {
+        print("Sucess")
+    }
+    
+    func errorLogin(errorMessage: String) {
+        AlertController(controller: self).getAlert(title: "Ops, error Login!", message: errorMessage)
+    }
+    
     
 }
 
