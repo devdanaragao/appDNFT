@@ -59,7 +59,7 @@ class RegisterScreen: UIView {
         name.clipsToBounds = true
         name.layer.cornerRadius = 12
         name.layer.borderWidth = 2.0
-        name.layer.borderColor = UIColor(red: 142/255, green: 217/255, blue: 17/255, alpha: 1.0).cgColor
+        name.layer.borderColor = UIColor.white.cgColor
         return name
     }()
     
@@ -75,7 +75,7 @@ class RegisterScreen: UIView {
         email.clipsToBounds = true
         email.layer.cornerRadius = 12
         email.layer.borderWidth = 2.0
-        email.layer.borderColor = UIColor(red: 142/255, green: 217/255, blue: 17/255, alpha: 1.0).cgColor
+        email.layer.borderColor = UIColor.white.cgColor
         return email
     }()
     
@@ -108,7 +108,7 @@ class RegisterScreen: UIView {
         password.clipsToBounds = true
         password.layer.cornerRadius = 12
         password.layer.borderWidth = 2.0
-        password.layer.borderColor = UIColor(red: 142/255, green: 217/255, blue: 17/255, alpha: 1.0).cgColor
+        password.layer.borderColor = UIColor.white.cgColor
         return password
     }()
     
