@@ -71,7 +71,9 @@ extension LoginVC: LoginScreenProtocol {
 
 extension LoginVC: LoginVMProtocol {
     func sucessLogin() {
-        print("Sucess")
+        let vc: TabBarVC = TabBarVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     func errorLogin(errorMessage: String) {
