@@ -53,7 +53,7 @@ class RegisterScreen: UIView {
         name.autocorrectionType = .no
         name.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434 */
         name.borderStyle = .roundedRect
-        name.keyboardType = .emailAddress
+        name.keyboardType = .default
         name.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.4)])
         name.textColor = .white
         name.clipsToBounds = true

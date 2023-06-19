@@ -23,7 +23,7 @@ class RegisterVM {
             self.delegate = delegate
         }
     
-    public func registerUser(email: String, password: String) {
+    public func registerUser(email: String, password: String, name: String) {
         auth.createUser(withEmail: email, password: password) { authResult, error in
             if error == nil {
                 print("sucesso cadastro")

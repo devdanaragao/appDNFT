@@ -55,7 +55,7 @@ class RegisterVC: UIViewController {
 extension RegisterVC: RegisterScreenProtocol {
     
     func pressRegisterButton() {
-        viewModel.registerUser(email: registerScreen?.emailTextField.text ?? "", password: registerScreen?.passwordTextField.text ?? "")
+        viewModel.registerUser(email: registerScreen?.emailTextField.text ?? "", password: registerScreen?.passwordTextField.text ?? "", name: registerScreen?.nameTextField.text ?? "")
 }
 
     
@@ -70,7 +70,9 @@ extension RegisterVC: RegisterScreenProtocol {
 
 extension RegisterVC: RegisterVMProtocol {
     func sucessRegister() {
-        print("Sucess")
+        let vc: LoginVC = LoginVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     func errorRegister(errorMessage: String) {
