@@ -17,16 +17,27 @@ class TabBarVC: UITabBarController {
     private func setupTabBar() {
         let main = UINavigationController(rootViewController: MainVC())
         let wallet = UINavigationController(rootViewController: WalletVC())
-        setViewControllers([main,wallet], animated: false)
-        tabBar.isTranslucent = true
+        let profile = UINavigationController(rootViewController: ProfileVC())
+        setViewControllers([main, wallet, profile], animated: false)
+        tabBar.isTranslucent = false
         tabBar.tintColor = .green
 //        tabBar.backgroundColor = UIColor(red: 140/255, green: 12/255, blue: 216/255, alpha: 1)
-        tabBar.backgroundColor = .purple
+//        tabBar.backgroundColor = .white
+        
+        let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithDefaultBackground()
+        tabBarAppearance.backgroundColor = .purple
+//        UITabBar.appearance().standardAppearance = tabBarAppearance
+//        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        tabBar.standardAppearance = tabBarAppearance
+        tabBar.scrollEdgeAppearance = tabBarAppearance
+        
         
         guard let items = tabBar.items else { return }
         
-        items[0].image = UIImage(systemName: "person")
-        items[1].image = UIImage(systemName: "wallet.pass")
+        items[0].image = UIImage(systemName: "case.fill")
+        items[1].image = UIImage(systemName: "wallet.pass.fill")
+        items[2].image = UIImage(systemName: "person.fill")
     }
 
 }
